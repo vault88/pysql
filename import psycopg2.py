@@ -126,5 +126,7 @@ if __name__ == '__main__':
                 find_client(cur, first_name='test3')
         except (Exception, Error) as error:
             print('Ошибка при работе с PostgreSQL', error)
-    
+    if conn:
+        cur.close()
+        conn.close()
     print('\nСоединение с PostgreSQL закрыто')
